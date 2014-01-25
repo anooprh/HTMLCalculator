@@ -6,7 +6,6 @@
 </head>
 <body ng-app="calculator-app">
 <div ng-controller='calculatorController'>
-    Hello World. . !! Trying out a simple calculator HTML app
     <br/>
     <br/>
     <div>
@@ -27,17 +26,17 @@
     <div>
         <input type="button" value="0" ng-click="click(0)"/>
     </div>
-    <div>
-        <input type="button" value="+" ng-click="click('+')"/>
-        <input type="button" value="-" ng-click="click('-')"/>
-        <input type="button" value="*" ng-click="click('*')"/>
-        <input type="button" value="/" ng-click="click('/')"/>
+    <div >
+        <input  ng-repeat="operator in operators" type="button" value="{{operator}}" ng-click="click(operator)"/>
     </div>
     <br/>
     <div>
         <input type="button" value='Evaluate' ng-click='evaluate()'/>
-        <br/>
         Result : {{result}}
+    </div>
+    <br/>
+    <div>
+        <input type="button" value="Reset" ng-click="reset()"/>
     </div>
 </div>
 </body>

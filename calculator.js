@@ -1,5 +1,6 @@
 angular.module('calculator-app', []).controller('calculatorController', function($scope) {
   var query = "";
+  $scope.operators = ['+','-','*','/'];
   $scope.result = 0;
   $scope.click = function(value){
     query += value;
@@ -7,5 +8,9 @@ angular.module('calculator-app', []).controller('calculatorController', function
   $scope.evaluate = function(){
     $scope.result = eval(query);
     query = $scope.result;
+  }
+  $scope.reset = function(){
+  query = ""
+  $scope.result = 0;
   }
 });
